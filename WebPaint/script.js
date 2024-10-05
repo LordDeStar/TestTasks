@@ -33,15 +33,20 @@ canvas.addEventListener('mousedown', ()=>{
 });
 
 canvas.addEventListener('mousemove', (e)=>{
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     if (isMouseDown && e.which == 1) {
         if (!brushColor){
             alert('Сперва выбери цвет!');
             return;
         }
-            
+        ;
         context.fillStyle = brushColor;
         context.beginPath();
-        context.arc(e.offsetX, e.offsetY, 5, 0, Math.PI*2);
+        context.arc(x, y, 5, 0, Math.PI*2);
         context.fill();
     }
 })
