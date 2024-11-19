@@ -1,0 +1,70 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+
+    &_logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        > h1{
+            color: #46A358;
+        }
+    }
+    &_nav{
+        width: 30%;
+        display: flex;
+        position: relative;
+        justify-content: space-between; 
+        &_link{
+            text-decoration: none;
+            color:black;
+        }
+        > .underline{
+            position: absolute;
+            top: 340%;
+            background-color: #46A358;
+            width: 10%;
+            height: 5px;
+            transition: all 0.3s ease;
+        }
+    }
+    &_menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > button{
+            border: none;
+            background-color: transparent;
+        }
+        .basket{
+            position: relative;
+            &_circle{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 10px;
+                position: absolute;
+                top: 40%;
+                right: 5%;
+                border-radius: 100px;
+                height: 12px;
+                width: 12px;
+                border: 3px solid white;
+                background-color: #46A358;
+            }
+        }
+        .login{
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 6px;
+            background-color: #46A358;
+        }
+    }
+}

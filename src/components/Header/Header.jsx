@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
+import logo from '../../assets/icons/logo.svg';
+import search from '../../assets/icons/search.svg';
+import baskets from '../../assets/icons/basket.svg';
+import login from '../../assets/icons/login.png';
+import { HandySvg } from 'handy-svg';
 export const Header = ()=>{
-    const underline= useRef();
     const [underlineWidth, setWidth] = useState(0);
     const [underlineLeft, setLeft] = useState(0);
     const handleLinkClick = (e)=>{
@@ -14,7 +18,7 @@ export const Header = ()=>{
     return (
         <div className={styles.header}>
             <div className={styles.header_logo}>
-                <img src="" alt="" />
+                <HandySvg src={logo} width="50" heigth="50"/>
                 <h1>GREENSHOP</h1>
             </div>
             <div className={styles.header_nav}>
@@ -22,12 +26,12 @@ export const Header = ()=>{
                 <a href="#" className={styles.header_nav_link} onClick={handleLinkClick}>Shop</a>
                 <a href="#" className={styles.header_nav_link} onClick={handleLinkClick}>Plamt Care</a>
                 <a href="#" className={styles.header_nav_link} onClick={handleLinkClick}>Blogs</a>
-                <div className={styles.underline} style={{width: underlineWidth, left: (underlineLeft - 512)+ "px"}}/>
+                <div className={styles.underline} style={{width: underlineWidth, left: (underlineLeft - 592)+ "px"}}/>
             </div>
             <div className={styles.header_menu}>
-                <button id='search'><span></span></button>
-                <button id='basket'><span></span><span></span></button>
-                <button id='login'><span></span>Login</button>
+                <button><HandySvg src={search} width="25" heigth="25"/></button>
+                <button className={styles.basket}><HandySvg src={baskets} width="25" heigth="25"/><span className={styles.basket_circle}>1</span> </button>
+                <button className={styles.login}><img src={login} alt="err" />Login</button>
             </div>
         </div>
     );
