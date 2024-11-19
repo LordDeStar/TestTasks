@@ -1,0 +1,34 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_logo{
+    display: flex;
+    flex-direction: row;
+
+}
+.header_logo h1{
+    color: green;
+}
+
+.header_nav{
+    width: 30%;
+    display: flex;
+    position: relative;
+    justify-content: space-between; 
+}
+.header_nav_link{
+    text-decoration: none;
+    color:black;
+}
+.header_nav > .underline{
+    position: absolute;
+    top: 110%;
+    background-color: green;
+    width: 10%;
+    height: 3px;
+    transition: all 0.3s ease;
+}
