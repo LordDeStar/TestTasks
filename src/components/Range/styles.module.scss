@@ -1,5 +1,47 @@
 .range {
     width: 70%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #46A35833;
+    position: relative;
+    cursor: pointer;
 
-    &_circle {}
+    &_container {
+        margin-left: 10%;
+
+        >p>span {
+            color: #46A358;
+        }
+    }
+
+    &_full {
+        z-index: 0;
+        max-width: 100%;
+        position: absolute;
+        height: 5px;
+        border-radius: 20px;
+        background-color: #46A358;
+    }
+
+    &_button {
+        color: white;
+        display: flex;
+        border: none;
+        align-items: center;
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #46A358;
+    }
+
+    .thumb {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 100px;
+        border: 2px solid white;
+        background-color: #46A358;
+        cursor: grab;
+    }
 }

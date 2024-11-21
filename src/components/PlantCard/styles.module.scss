@@ -1,0 +1,57 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #f5f5f5;
+    position: relative;
+
+    &_img {
+        height: 300px;
+
+    }
+
+    &_text {
+        font-weight: 400;
+        color: #3d3d3d;
+        font-size: 16px;
+    }
+
+    &_cost {
+        color: #46A358;
+    }
+
+    &_discount {
+        position: absolute;
+        left: 0;
+        top: 5%;
+        height: 29px;
+        width: 80px;
+        color: white;
+        background-color: #46A358;
+    }
+
+    &_buttons {
+        width: 50%;
+        position: absolute;
+        top: 60%;
+        left: 25%;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+        opacity: 0;
+
+        >* {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+    }
+
+}

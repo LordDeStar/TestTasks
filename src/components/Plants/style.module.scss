@@ -1,0 +1,12 @@
+.plants {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &_container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}

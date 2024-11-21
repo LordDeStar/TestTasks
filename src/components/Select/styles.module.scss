@@ -1,0 +1,29 @@
+.select {
+    padding: 5px;
+    min-width: 30%;
+    position: relative;
+
+    &_display {
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        >button {
+            transition: all 0.3s ease;
+            background-color: transparent;
+            border: none;
+            margin-top: 7px;
+        }
+
+    }
+
+    &_options {
+        width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+}

@@ -1,5 +1,6 @@
 import styles from './styles.module.scss';
 import action from '../../assets/icons/action.png';
+import { Range } from '../Range/Range';
 export const LeftSidebar = () => {
     return (
         <div className={styles.sidebar}>
@@ -16,7 +17,7 @@ export const LeftSidebar = () => {
                 <p>Accessories<span>{'(18)'}</span></p>
             </div>
             <h3>Price range</h3>
-            <div>Range component</div>
+            <Range min={0} max={100} label={'Price: '} charBefore={'$'} />
             <h3>Size</h3>
             <div className={styles.text_container}>
                 <p>Small<span>{'(119)'}</span></p>

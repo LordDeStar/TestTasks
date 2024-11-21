@@ -1,27 +1,59 @@
 import { useRef, useState } from 'react';
 import styles from './styles.module.scss';
-export const Range = ({ label, charBefore }) => {
 
-    const left = useRef();
-    const right = useRef();
-    const full = useRef();
+export const Range = ({ label, charBefore, min, max }) => {
+    const [leftValue, setLeftValue] = useState(min);
+    const [rightValue, setRightValue] = useState(max);
+    const containerRef = useRef(null);
 
-    const [isLeftActive, setIsLeftActive] = useState(false);
-    const [isRightActive, setIsRightActive] = useState(false);
-    const handlerLeftMove = (e) => {
-        if (!isLeftActive) return
-        left.current.style.left = e.clientX + 'px';
-    }
+    const handleMouseMove = (e, setValue) => {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const posX = e.clientX - containerRect.left;
+        const containerWidth = containerRect.width;
+        const value = (max - min) * (posX / containerWidth) + min;
 
-    const handlerRightMove = (e) => {
-        if (!isRightActive) return
-        right.current.style.right = e.clientX + 'px';
-    }
+        // Ограничение значения в пределах min и max
+        const clampedValue = Math.max(min, Math.min(value, max));
+        setValue(clampedValue);
+    };
+
+    const handleMouseDown = (e, setValue) => {
+        const handleMouseMoveWrapper = (event) => handleMouseMove(event, setValue);
+        const handleMouseUp = () => {
+            document.removeEventListener('mousemove', handleMouseMoveWrapper);
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+        document.addEventListener('mousemove', handleMouseMoveWrapper);
+        document.addEventListener('mouseup', handleMouseUp);
+    };
+
     return (
-        <div className={styles.range}>
-            <div className={styles.range_circle} ref={left} onMouseUp={() => { setIsLeftActive(false) }} onMouseDown={() => { setIsLeftActive(true) }} onMouseMove={handlerLeftMove}></div>
-            <div className={styles.range_full} ref={full}></div>
-            <div className={styles.range_circle} ref={right} onMouseUp={() => { setIsRightActive(false) }} onMouseDown={() => { setIsRightActive(true) }} onMouseMove={handlerRightMove}></div>
+        <div className={styles.range_container}>
+            <div className={styles.range} ref={containerRef}>
+                <div
+                    className={styles.range_full}
+                    style={{
+                        left: `${((leftValue - min) / (max - min)) * 100}%`,
+                        width: `${((rightValue - leftValue) / (max - min)) * 100}%`,
+                    }}
+                />
+                <div
+                    className={styles.thumb}
+                    style={{
+                        left: `${((leftValue - min) / (max - min)) * 100}%`,
+                    }}
+                    onMouseDown={(e) => handleMouseDown(e, setLeftValue)}
+                />
+                <div
+                    className={styles.thumb}
+                    style={{
+                        left: `${((rightValue - min) / (max - min)) * 100}%`,
+                    }}
+                    onMouseDown={(e) => handleMouseDown(e, setRightValue)}
+                />
+            </div>
+            <p>{label} <span>{charBefore}{leftValue.toFixed(2)}</span> - <span>{charBefore}{rightValue.toFixed(2)}</span></p>
+            <button className={styles.range_button}>Filter</button>
         </div>
     );
-}
+};

@@ -1,0 +1,29 @@
+.panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 838px;
+
+    &_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 30%;
+
+        >p {
+            color: #3d3d3d;
+            border-bottom-width: 0px;
+        }
+
+        &_active {
+            animation: active-anim 0.3s ease forwards;
+        }
+
+        @keyframes active-anim {
+            to {
+                color: #46A358;
+                border-bottom: 4px solid #46A358;
+            }
+        }
+    }
+}
