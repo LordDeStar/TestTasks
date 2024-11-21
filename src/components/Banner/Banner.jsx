@@ -14,8 +14,8 @@ export const Banner = () => {
                         <button className={styles.shop_button}>SHOP NOW</button>
                     </div>
                     <div className={styles.banner_images}>
-                        <HandySvg key="big-image" src={bigImage} width="410" height="410" />
-                        <HandySvg key="small-image" src={bigImage} width="200" height="200" />
+                        <HandySvg key="big-image" src={bigImage} width="410" height="410" className={styles.banner_images_big} />
+                        <HandySvg key="small-image" src={bigImage} width="130" height="130" className={styles.banner_images_small} />
                     </div>
                 </div>
             </Slide>

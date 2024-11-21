@@ -35,6 +35,27 @@
             color: white;
             padding: 10px;
         }
+
+    }
+
+    &_images {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
+
+        &_big {
+            position: absolute;
+            left: 25%;
+            top: 15%;
+        }
+
+        &_small {
+            position: absolute;
+            top: 71%;
+            left: 27%;
+        }
     }
 }
 

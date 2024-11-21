@@ -1,0 +1,35 @@
+.sidebar {
+    width: 310px;
+    height: 774px;
+    background-color: #f5f5f5;
+    position: relative;
+
+    >h3 {
+        position: relative;
+        left: 5%;
+        color: #3d3d3d;
+    }
+
+    >.text_container {
+        width: 100%;
+        position: relative;
+        left: 10%;
+
+        >p {
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+
+        }
+
+        .active {
+            color: #46A358;
+        }
+    }
+
+    >img {
+        position: absolute;
+        top: 100%;
+        left: -29px;
+    }
+}
