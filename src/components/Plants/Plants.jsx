@@ -10,6 +10,7 @@ import img8 from '../../assets/icons/8.png';
 import img9 from '../../assets/icons/9.png';
 import { ControlPanel } from '../ControlPanel/ControlPanel';
 import { PlantCard } from '../PlantCard/PlantCard';
+import { Pagination } from '../Pagnation/Pagination';
 
 const plants = [
     {
@@ -77,6 +78,7 @@ export const Plants = () => {
                     <PlantCard img={plant.img} text={plant.text} cost={plant.cost} discount={plant.discount} />
                 ))}
             </div>
+            <Pagination count={4} />
         </div>
     );
 }
