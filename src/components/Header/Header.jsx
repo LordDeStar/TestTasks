@@ -5,9 +5,11 @@ import search from '../../assets/icons/search.svg';
 import baskets from '../../assets/icons/basket.svg';
 import login from '../../assets/icons/login.png';
 import { HandySvg } from 'handy-svg';
+import { ModalAuth } from '../Modal/Modal';
 export const Header = () => {
     const [underlineWidth, setWidth] = useState(0);
     const [underlineLeft, setLeft] = useState(0);
+    const [modalShow, setShow] = useState(false);
     const handleLinkClick = (e) => {
 
         const { width, left } = e.target.getBoundingClientRect();
@@ -15,6 +17,7 @@ export const Header = () => {
         setWidth(width);
         setLeft(left);
     }
+    
     return (
         <div className={styles.header}>
             <div className={styles.header_logo}>
@@ -31,8 +34,9 @@ export const Header = () => {
             <div className={styles.header_menu}>
                 <button><HandySvg src={search} width="25" height="25" /></button>
                 <button className={styles.basket}><HandySvg src={baskets} width="25" heigth="25" /><span className={styles.basket_circle}>7</span> </button>
-                <button className={styles.login}><img src={login} alt="err" />Login</button>
+                <button className={styles.login} onClick={()=>{setShow(true)}}><img src={login} alt="err" />Login</button>
             </div>
+            {modalShow && <ModalAuth closing={()=>{setShow(false)}}/>}
         </div>
     );
 }
