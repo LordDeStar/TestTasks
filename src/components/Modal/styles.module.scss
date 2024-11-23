@@ -1,15 +1,67 @@
 .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    top: -100%;
-    width: 30%;
+    top: -100vh;
+    left: 0;
+    width: 500px;
+    height: 600px;
     animation: slide-in 0.3s ease forwards;
-    border-radius: 6px;
+    border-radius: 4px;
     background-color: white;
     z-index: 999;
+    left: 35%;
+
+    &_close_button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: none;
+        background-color: transparent;
+        transition: all 0.3s ease;
+        width: 20px;
+        height: 20px;
+    }
+
+    &_toggle {
+        margin: 30px;
+        position: relative;
+        width: 157px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 500;
+        font-size: 20px;
+
+        &_active {
+            opacity: 0;
+            color: #46A358;
+            animation: create-anim 0.3s ease forwards;
+        }
+    }
+
+    &_outlay {
+        position: absolute;
+        background-color: #3d3d3d45;
+        width: 100vw;
+        height: 100vh;
+        z-index: 998;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        animation: create-anim 0.2s ease forwards;
+    }
+
+    @keyframes create-anim {
+        to {
+            opacity: 1;
+        }
+    }
 
     @keyframes slide-in {
         to {
-            top: 20%;
+            top: 20vh;
         }
     }
 }
