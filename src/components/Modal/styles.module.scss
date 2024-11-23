@@ -1,15 +1,15 @@
-.modal{
+.modal {
     position: absolute;
     top: -100%;
+    width: 30%;
     animation: slide-in 0.3s ease forwards;
     border-radius: 6px;
     background-color: white;
     z-index: 999;
 
     @keyframes slide-in {
-        to{
+        to {
             top: 20%;
         }
     }
 }
-
