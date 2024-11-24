@@ -12,7 +12,7 @@ export const ModalAuth = ({ closing }) => {
 
             </div>
             <div className={styles.modal}>
-                <button className={styles.modal_close_button} onClick={() => close()}>
+                <button className={styles.modal_close_button} onClick={() => { closing() }}>
                     <HandySvg src={close} width='18px' height='18px' className={styles.modal_close_button_svg} />
                 </button>
                 <div className={styles.modal_toggle}>

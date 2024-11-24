@@ -1,0 +1,112 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    gap: 10px;
+
+    >p {
+        font-weight: 400;
+        font-size: 13px;
+        color: #3d3d3d;
+    }
+
+    ;
+
+    &_forgot {
+        color: #46A358;
+        text-align: end;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    &_toggle_button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #46A358;
+        font-size: 14px;
+        width: 20%;
+    }
+
+    &_input {
+        border: 1px solid #46a35936;
+        border-radius: 5px;
+        height: 40px;
+
+        &:focus {
+            outline: 2px solid #46A358
+        }
+
+        &_pass {
+            border: none;
+        }
+
+        &_container {
+            padding: 1px;
+            border: 1px solid #46a35936;
+            border-radius: 5px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >input {
+                height: 40px;
+                width: 80%;
+                border-radius: 5px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            >button>* {
+                fill: transparent
+            }
+
+            >button:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &_button {
+        color: white;
+        height: 45px;
+        width: 300px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: #46A358;
+        border: none;
+    }
+
+    >hr {
+        border-style: solid;
+        border-color: #eaeaea;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    &_hr_text {
+        position: absolute;
+        top: 325px;
+        left: 35%;
+        background-color: white;
+        padding: 5px;
+    }
+
+    &_with {
+        display: flex;
+        gap: 5px;
+        color: #727272;
+        border: 1px solid #eaeaea;
+        height: 40px;
+        width: 100%;
+        justify-content: center;
+        border-radius: 5px;
+        align-items: center;
+        background-color: white;
+    }
+
+}
