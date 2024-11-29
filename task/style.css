@@ -1,0 +1,7 @@
+.block {
+    background-color: rgb(197, 48, 185);
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+}
